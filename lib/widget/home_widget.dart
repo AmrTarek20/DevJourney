@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quize/model/track_card.dart';
 import 'package:flutter_quize/screens/category_selection_screen.dart';
+import 'package:flutter_quize/widget/track_card_widget.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});

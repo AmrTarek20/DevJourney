@@ -24,7 +24,7 @@ class TrackCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(2.0), 
+        padding: const EdgeInsets.all(2.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           gradient: LinearGradient(

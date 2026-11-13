@@ -30,25 +30,47 @@ class _RoadmapScreenState extends State<RoadmapScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        itemCount: roadmapData.length,
-        itemBuilder: (context, index) {
-          final item = roadmapData[index];
-          return RoadmapTile(
-            item: item,
-            isLast: index == roadmapData.length - 1,
-            onTap: () {
-              setState(() {
-                item.status = MilestoneStatus.completed;
-                if (index + 1 < roadmapData.length) {
-                  roadmapData[index + 1].status = MilestoneStatus.current;
-                }
-              });
-            },
-          );
-        },
-      ),
+      body: Stack(
+        children:[
+           Positioned(
+            top: -300,
+            right: -310,
+            child: Container(
+              width: 800,
+              height: 800,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    const Color(0xFF00F2FE).withOpacity(0.45),
+                    const Color(0xFF00B4D8).withOpacity(0.15),
+                    Colors.transparent,
+                  ],
+                  stops: const [0.0, 0.5, 1.0],
+                ),
+              ),
+            ),
+          ),
+         ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          itemCount: roadmapData.length,
+          itemBuilder: (context, index) {
+            final item = roadmapData[index];
+            return RoadmapTile(
+              item: item,
+              isLast: index == roadmapData.length - 1,
+              onTap: () {
+                setState(() {
+                  item.status = MilestoneStatus.completed;
+                  if (index + 1 < roadmapData.length) {
+                    roadmapData[index + 1].status = MilestoneStatus.current;
+                  }
+                });
+              },
+            );
+          },
+        ),
+    ]  ),
     );
   }
 }
