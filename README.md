@@ -1,4 +1,4 @@
-# 🚀 Junior Flutter Developer Roadmap & Quiz App
+#  Junior Flutter Developer Roadmap & Quiz App
 
 <p align="center">
   <b>An interactive, cross-platform mobile application built with Flutter and Dart, designed to guide aspiring Flutter developers through a structured technical roadmap and test their expertise with comprehensive quiz modules.</b>
